@@ -1,0 +1,55 @@
+version: '3'
+services:
+   app1:
+     build: .
+     command: script1.py
+     volumes:
+       - ./videos:/app/videos
+       - .data:/app/data
+     networks:
+      - my_network
+  
+   app2:
+     build: .
+     command: script2.py
+     depends_on:
+       - app1
+     volumes:
+       - .data:/app/data
+     networks:
+      - my_network
+  #  app3:
+  #    build: .
+  #    command: script3.py
+  #    depends_on:
+  #      - app2
+  #    volumes:
+  #      - .data:/data
+  #    networks:
+  #     - my_network
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  data:
+
+# version: '3'
+# services:
+#   app1:
+#     build: .
+#     container_name: app1
+#     volumes:
+#       - ./data:/data
+#     command: python3 script1.py
+
+#   app2:
+#     build: .
+#     container_name: app2
+#     depends_on:
+#       - app1
+#     volumes:
+#       - ./data:/data
+#     command: python3 script2.py
+
+

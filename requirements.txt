@@ -1,0 +1,4 @@
+moviepy
+google-cloud-speech
+google-cloud-storage
+langdetect
