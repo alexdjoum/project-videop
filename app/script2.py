@@ -66,11 +66,11 @@ def detect_language_from_video(video_file, output_folder):
             os.remove(audio_file)
 
 # Exemple d'utilisation
-# dossier_videos = os.path.join(os.getcwd(), "../data")
-# dossier_langues = os.path.join(os.getcwd(), "../data/languages_detected")
+dossier_videos = os.path.join(os.getcwd(), "../data")
+dossier_langues = os.path.join(os.getcwd(), "../data/languages_detected")
 
-dossier_videos = "/data"
-dossier_langues = "/data/languages_detected"
+# dossier_videos = "/data"
+# dossier_langues = "/data/languages_detected"
 
 # Lister les vidéos dans le dossier
 videos = [f for f in os.listdir(dossier_videos) if f.endswith(('.mp4', '.avi', '.mkv'))]
